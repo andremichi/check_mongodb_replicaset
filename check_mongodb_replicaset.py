@@ -10,9 +10,12 @@ import sys								# Import sys module for nagios system exits.
 # slavesThreshold, set this variable value according to the number of MongoDB servers in your replicaSet configuration.
 slavesThreshold = 2
 
+# mongodb_port 
+mongodb_port = 27017
+
 # Mongodb_port by default is 27017, so change according to your configuration. 
 # Create a new connection to mongodb on localhost, slave_okay needs to be enable for queries on a slave node.
-connection = Connection('localhost', 27017 , slave_okay=True)
+connection = Connection('localhost', mongodb_port , slave_okay=True)
 # Connect to a test database to enable db.commands
 db = connection.test
 # Saves the result of 'isMaster' "query"
@@ -35,7 +38,7 @@ if primaryHost is not None:
 	for host in hosts:
 		host,port = host.split(':')
 		try:
-			conn = Connection(host, slave_okay=True)
+			conn = Connection(host, mongodb_port, slave_okay=True)
 			db = conn.test
 			res = db.command('isMaster')
 			slaveStatus = str(res['secondary'])
