@@ -6,7 +6,7 @@ Simple nagios plugin to monitoring MongoDB ReplicaSet status.
 python-pymongo >= 1.7
 
 - To install on Debian or Ubuntu:
-# apt-get install python-pymongo
+- apt-get install python-pymongo
 
 - Install on a mongodb server that have access to all others mongodb servers.
 - Not tested from an outside box.
