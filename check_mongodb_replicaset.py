@@ -45,7 +45,7 @@ if primaryHost is not None:
 			print "Could not connect to host " +host
 	# If there are less than 2 secondaries servers, an Warning is emmited. MongoDB works with at least 1 primary and 1 secondary server.
 	if len(slaveHosts) < slavesThreshold:
-		print "[ WARNING ] - Only one slave server running " + slaveHosts
+		print "[ WARNING ] - Only one slave server running " + str(slaveHosts)
 		sys.exit(1)
 	# If the primary and two secondaries
 	else:
