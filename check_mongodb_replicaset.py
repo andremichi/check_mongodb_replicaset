@@ -49,5 +49,6 @@ if primaryHost is not None:
 		sys.exit(1)
 	# If the primary and two secondaries
 	else:
+		primaryHost,port = primaryHost.split(':')
 		print "[ OK ] - ReplicaSet " + replicasetName + " running with Master server " + primaryHost + " and two other slaves"
 		sys.exit(0)
