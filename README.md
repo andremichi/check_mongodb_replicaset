@@ -12,6 +12,7 @@ python-pymongo >= 1.7
 - Not tested from an outside box.
 
 Suggestions are welcome. =)
+Fell free to contribute or fork it.
 
 
 
